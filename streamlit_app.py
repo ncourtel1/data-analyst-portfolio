@@ -1,6 +1,9 @@
 import streamlit as st
+from pathlib import Path
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+pg = st.navigation([
+    st.Page("home_page_0.py"),
+    st.Page(str(Path(__file__).parent / "strava" / "strava_page_1.py")),
+    st.Page("page_2.py")
+])
+pg.run()
